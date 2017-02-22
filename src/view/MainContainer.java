@@ -51,7 +51,7 @@ public class MainContainer extends JPanel implements ActionListener{
 		
 		controle = new ControleMainContainer(this);
 	}
-	
+	//uso de thread pra gerar o alvo a cada seg de milesimo gerar um alvo
 	public class GerarAlvo extends Thread{
 		
 		public void run() {
@@ -67,7 +67,6 @@ public class MainContainer extends JPanel implements ActionListener{
 				}
 				
 			}
-			
 			
 			super.run();
 		}

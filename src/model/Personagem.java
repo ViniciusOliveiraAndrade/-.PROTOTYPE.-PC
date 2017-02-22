@@ -16,7 +16,7 @@ public class Personagem {
 
 	private int larguraTela;
 	
-	private ArrayList<Point> tiros;
+	private ArrayList<Tiro> tiros;
 	
 	public Personagem(Dimension dimension) {
 		this.dimension = dimension;
@@ -45,11 +45,9 @@ public class Personagem {
 	}
 	
 	public synchronized void desenharTiros(Graphics g){
-
-		g.setColor(Color.YELLOW);
 		
-		for (Point point : tiros) {
-			g.fillRect(point.x, point.y, 20, 10);
+		for (Tiro tiro : tiros) {
+			tiro.desenharTiros(g);
 		}
 	}
 	
@@ -71,13 +69,13 @@ public class Personagem {
 	}
 	
 	public synchronized void atirar(){
-		tiros.add(new Point(getHead().x, getHead().y- 10 ));
+		tiros.add(new Tiro(getHead().x, getHead().y- 10 ));
 	} 
 	
 	public synchronized void moverTiros(){
 		
-		for (Point point : tiros) {
-			point.y-=5;
+		for (Tiro tiro : tiros) {
+			tiro.mover();
 		}
 	}
 	
@@ -121,7 +119,7 @@ public class Personagem {
 	}
 
 
-	public ArrayList<Point> getTiros() {
+	public ArrayList<Tiro> getTiros() {
 		return tiros;
 	}
 	

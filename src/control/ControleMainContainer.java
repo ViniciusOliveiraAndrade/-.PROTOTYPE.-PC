@@ -40,20 +40,22 @@ public class ControleMainContainer implements ActionListener{
 		
 	}
 	
-//	public void verificarColisao(){
-//		
-//		for (int i = 0; i < mainContainer.getPersonagem().getTiros().size(); i++) {
-//			for (int j = 0; j < mainContainer.getAlvos().size(); j++) {
-//				if (mainContainer.getAlvos().get(j).getArea().intersects(new Rectangle(mainContainer.getPersonagem().getTiros().get(i).x, mainContainer.getPersonagem().getTiros().get(i).y, 20, 10))){
-//					mainContainer.removerAlvo(j);
-//					mainContainer.getPersonagem().removerTiro(i);
-//					
-//					System.out.println("Acertou");
-//				}
-//			}
-//		}
-//		
-//	}
+	public void verificarColisao(){
+		
+		for (int i = 0; i < mainContainer.getPersonagem().getTiros().size(); i++) {
+			for (int j = 0; j < mainContainer.getAlvos().size(); j++) {
+				if (mainContainer.getAlvos().get(j).getArea().intersects(mainContainer.getPersonagem().getTiros().get(i).getArea())){
+					mainContainer.removerAlvo(j);
+					mainContainer.getPersonagem().removerTiro(i);
+					System.out.println("Acertou");
+
+					
+					return;
+				}
+			}
+		}
+		
+	}
 	
 	
 	
@@ -64,7 +66,7 @@ public class ControleMainContainer implements ActionListener{
 		mainContainer.getPersonagem().moverTiros();
 		verificarAlvoFora();
 		verificarTiroFora();
-//		verificarColisao();
+		verificarColisao();
 	
 	}
 }
