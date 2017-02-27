@@ -13,6 +13,7 @@ import javax.swing.border.LineBorder;
 
 import control.ControleMainContainer;
 import model.Alvo;
+import model.Missao;
 import model.Personagem;
 
 public class MainContainer extends JPanel implements ActionListener{
@@ -118,5 +119,13 @@ public class MainContainer extends JPanel implements ActionListener{
 		return alvos;
 	}
 
+	public ControleMainContainer getControle() {
+		return controle;
+	}
+	
+	public Missao getMissao(){
+		
+		return controle.getMissao();
+	}
 
 }

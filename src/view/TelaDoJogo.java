@@ -10,7 +10,7 @@ public class TelaDoJogo extends JFrame{
 	private static final long serialVersionUID = 1L;
 
 	private MainContainer mainContainer;
-	private InformationPanel informationPanel;
+	public static InformationPanel informationPanel;
 	
 	private ControleTelaDoJogo controle;
 	public TelaDoJogo(Dimension dimension) {
@@ -22,7 +22,7 @@ public class TelaDoJogo extends JFrame{
 		
 		informationPanel = new InformationPanel(dimension);
 		informationPanel.setLocation(mainContainer.getWidth(), 0);
-		
+		informationPanel.setMissao(mainContainer.getMissao().getNumeroAlvo(), mainContainer.getMissao().getOperacao());
 		
 		add(mainContainer);
 		add(informationPanel);

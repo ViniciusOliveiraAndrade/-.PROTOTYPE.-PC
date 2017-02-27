@@ -3,7 +3,6 @@ package model;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Graphics;
-import java.awt.Point;
 import java.awt.Rectangle;
 import java.util.ArrayList;
 
@@ -13,6 +12,8 @@ public class Personagem {
 	private int width = 60,height = 60;
 	private Rectangle body, head;
 	private Dimension dimension;
+	private int acerto1, acerto2;
+	private boolean acerto1Ok = false, acerto2Ok = false;
 
 	private int larguraTela;
 	
@@ -122,6 +123,48 @@ public class Personagem {
 	public ArrayList<Tiro> getTiros() {
 		return tiros;
 	}
+
+
+	public int getAcerto1() {
+		return acerto1;
+	}
+
+
+	public void setAcerto1(int acerto1) {
+		this.acerto1 = acerto1;
+	}
+
+
+	public int getAcerto2() {
+		return acerto2;
+	}
+
+
+	public void setAcerto2(int acerto2) {
+		this.acerto2 = acerto2;
+	}
+
+
+	public boolean isAcerto1Ok() {
+		return acerto1Ok;
+	}
+
+
+	public void setAcerto1Ok(boolean acerto1Ok) {
+		this.acerto1Ok = acerto1Ok;
+	}
+
+
+	public boolean isAcerto2Ok() {
+		return acerto2Ok;
+	}
+
+
+	public void setAcerto2Ok(boolean acerto2Ok) {
+		this.acerto2Ok = acerto2Ok;
+	}
+	
+	
 	
 	
 }

@@ -1,5 +1,7 @@
 package main;
 
+import java.util.Random;
+
 import javax.swing.JFrame;
 
 public class Teste1 {
@@ -11,6 +13,9 @@ public class Teste1 {
 		f.setUndecorated(true);
 		f.setVisible(true);
 		
+		while(true){
+			System.out.println(new Random().nextInt(4));
+		}
 	}
 
 }
